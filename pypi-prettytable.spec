@@ -4,7 +4,7 @@
 #
 Name     : pypi-prettytable
 Version  : 2.5.0
-Release  : 72
+Release  : 73
 URL      : https://files.pythonhosted.org/packages/e4/35/21bf22e21b29102bbe81730caf498dfb3e1eed2642ac71f323472ead673a/prettytable-2.5.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/e4/35/21bf22e21b29102bbe81730caf498dfb3e1eed2642ac71f323472ead673a/prettytable-2.5.0.tar.gz
 Summary  : A simple Python library for easily displaying tabular data in a visually appealing ASCII table format
