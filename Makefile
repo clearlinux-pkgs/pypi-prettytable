@@ -1,5 +1,5 @@
 PKG_NAME := pypi-prettytable
-URL = https://files.pythonhosted.org/packages/ba/b6/8e78337766d4c324ac22cb887ecc19487531f508dbf17d922b91492d55bb/prettytable-3.6.0.tar.gz
+URL = https://files.pythonhosted.org/packages/95/8d/f6b4448e386eb1382a99cbceabe3899f3aa431992582cc90496843548303/prettytable-3.7.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
