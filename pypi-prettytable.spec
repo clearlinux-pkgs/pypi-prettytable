@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-prettytable
-Version  : 3.7.0
-Release  : 91
-URL      : https://files.pythonhosted.org/packages/95/8d/f6b4448e386eb1382a99cbceabe3899f3aa431992582cc90496843548303/prettytable-3.7.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/95/8d/f6b4448e386eb1382a99cbceabe3899f3aa431992582cc90496843548303/prettytable-3.7.0.tar.gz
+Version  : 3.8.0
+Release  : 92
+URL      : https://files.pythonhosted.org/packages/18/fa/82e719efc465238383f099c08b5284b974f5002dbe12050bcbbc912366eb/prettytable-3.8.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/18/fa/82e719efc465238383f099c08b5284b974f5002dbe12050bcbbc912366eb/prettytable-3.8.0.tar.gz
 Summary  : A simple Python library for easily displaying tabular data in a visually appealing ASCII table format
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -15,6 +15,7 @@ Requires: pypi-prettytable-license = %{version}-%{release}
 Requires: pypi-prettytable-python = %{version}-%{release}
 Requires: pypi-prettytable-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
+BuildRequires : pypi(hatch_vcs)
 BuildRequires : pypi(hatchling)
 BuildRequires : pypi(py)
 BuildRequires : pypi-pluggy
@@ -64,10 +65,10 @@ python3 components for the pypi-prettytable package.
 
 
 %prep
-%setup -q -n prettytable-3.7.0
-cd %{_builddir}/prettytable-3.7.0
+%setup -q -n prettytable-3.8.0
+cd %{_builddir}/prettytable-3.8.0
 pushd ..
-cp -a prettytable-3.7.0 buildavx2
+cp -a prettytable-3.8.0 buildavx2
 popd
 
 %build
@@ -75,12 +76,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1681224683
+export SOURCE_DATE_EPOCH=1686584104
 export GCC_IGNORE_WERROR=1
-export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 -m build --wheel --skip-dependency-check --no-isolation
 pushd ../buildavx2/
