@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-prettytable
-Version  : 3.8.0
-Release  : 92
-URL      : https://files.pythonhosted.org/packages/18/fa/82e719efc465238383f099c08b5284b974f5002dbe12050bcbbc912366eb/prettytable-3.8.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/18/fa/82e719efc465238383f099c08b5284b974f5002dbe12050bcbbc912366eb/prettytable-3.8.0.tar.gz
+Version  : 3.9.0
+Release  : 93
+URL      : https://files.pythonhosted.org/packages/e1/c0/5e9c4d2a643a00a6f67578ef35485173de273a4567279e4f0c200c01386b/prettytable-3.9.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/e1/c0/5e9c4d2a643a00a6f67578ef35485173de273a4567279e4f0c200c01386b/prettytable-3.9.0.tar.gz
 Summary  : A simple Python library for easily displaying tabular data in a visually appealing ASCII table format
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -65,10 +65,10 @@ python3 components for the pypi-prettytable package.
 
 
 %prep
-%setup -q -n prettytable-3.8.0
-cd %{_builddir}/prettytable-3.8.0
+%setup -q -n prettytable-3.9.0
+cd %{_builddir}/prettytable-3.9.0
 pushd ..
-cp -a prettytable-3.8.0 buildavx2
+cp -a prettytable-3.9.0 buildavx2
 popd
 
 %build
@@ -76,7 +76,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1686584104
+export SOURCE_DATE_EPOCH=1694468670
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
